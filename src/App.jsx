@@ -36,7 +36,8 @@ function App() {
       {/* Profil */}
       <div>
         <div className={`flex justify-center mt-9`}>
-          <div className={` h-4 w-4 bg-green-400 absolute top-xl right-28 rounded-full ring-4 md:[top-xl right-28 rounded-full ring-4] ${!open && "h-2.2 w-2.2 bg-green-400 absolute inset-x-12 rounded-full ring-2 origin-left duration-900"}`}></div>
+          <div className={` h-4 w-4 bg-green-400 absolute top-xl right-28 rounded-full ring-4 md:
+           ${!open && "h-2.2 w-2.2 bg-green-400 absolute inset-x-12 rounded-full ring-2 origin-left duration-900"}`}></div>
           <img alt='' src={benjami} className={`w-20 h-20 object-cover rounded-full border-4 border-cyan-100 ${!open && "w-12 h-12 rounded-full border-2"}`}/> 
   
       </div>

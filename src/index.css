@@ -17,6 +17,9 @@ code {
     monospace;
 }
 
-.btn {
-  @apply: rounded-br-lg bg-steal text-white;
+.studentCards:hover img {
+  transform: scale(1.1);
+  translate: all .8s ease-in-out;
 }
+
+
