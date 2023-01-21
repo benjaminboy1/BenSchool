@@ -1,8 +1,6 @@
 import React from "react";
 import {AiFillStar, AiOutlineAppstore, AiOutlineArrowRight, AiOutlineSearch, AiOutlineDollar} from "react-icons/ai";
 import {GiPathDistance} from "react-icons/gi";
-import { prof4 } from "../assets/images/prof4.jpeg";
-
 import benja from "../assets/images/benja.jpg";
 
 
@@ -13,8 +11,15 @@ import benja from "../assets/images/benja.jpg";
 const Home = () => {
 
     const onlineProfile = [
-        {name: "Pr.Ursile", Image: 'https://static.onzemondial.com/8/2023/01/photo_article/814979/324727/1200-L-psg-angers-messi-ovationn-par-le-parc-pour-sa-victoire-en-coupe-du-monde.jpg' },
-       
+        {name: "Pr.Gracias", Image: require('../assets/images/prof1.jpeg')},
+        {name: "Pr.benjamin", Image: require('../assets/images/prof2.jpeg'),},
+        {name: "Pr.Joskky", Image: require('../assets/images/prof3.jpeg'),},
+        {name: "Pr.Ursille", Image: require('../assets/images/prof4.jpeg'),},
+        {name: "Pr.T-leader", Image: require('../assets/images/prof5.jpeg'),},
+        {name: "Pr.Pmiller", Image: require('../assets/images/prof6.jpg'),},
+        {name: "Pr.Elvis", Image: require('../assets/images/prof7.jpg'),},
+        {name: "Pr.Joseph", Image: require('../assets/images/prof8.jpg'),},
+        {name: "Pr.JKK", Image: require('../assets/images/prof9.jpg'),},
     ]
 
     return(
@@ -67,7 +72,7 @@ const Home = () => {
                             {onlineProfile?.map((online,i) => (
                                 <div key={i} className="mt-2">
                                 <img src={online.Image} alt="" className="h-14 w-14 rounded-full object-cover border-2 border-gray-400 "/>
-                                <div className=" bg-green-500 h-3 w-3 rounded-full ml-11 mt-[-18px] absolute ring-2 ring-gray-400 "></div>
+                                <div className=" bg-green-400 h-2 w-2 rounded-full ml-11 mt-[-14px] absolute ring-2 "></div>
                                
                                 <h3 className="text-center text-[10px] font-medium opacity-70 mt-[-8px] ">
                                 {online?.name}
