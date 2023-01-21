@@ -1,7 +1,7 @@
 import React from "react";
 import {AiFillStar, AiOutlineAppstore, AiOutlineArrowRight, AiOutlineSearch, AiOutlineDollar} from "react-icons/ai";
 import {GiPathDistance} from "react-icons/gi";
-import prof4 from "../assets/images/prof4.jpeg";
+import { prof4 } from "../assets/images/prof4.jpeg";
 
 import benja from "../assets/images/benja.jpg";
 
@@ -11,6 +11,12 @@ import benja from "../assets/images/benja.jpg";
 
 
 const Home = () => {
+
+    const onlineProfile = [
+        {name: "Pr.Ursile", Image: 'https://static.onzemondial.com/8/2023/01/photo_article/814979/324727/1200-L-psg-angers-messi-ovationn-par-le-parc-pour-sa-victoire-en-coupe-du-monde.jpg' },
+       
+    ]
+
     return(
         <div className="h-[100%] basis-80 ">
                 {/* Top section */}
@@ -54,25 +60,30 @@ const Home = () => {
 
                 </div>
 
-                {/*Professor */}
-                <div className="flex items-center justify-between ">
                     {/*Professor id */}
-                    <div className="">
-                        <div className="">
-                           <img src={prof4} alt="" className="h-12 w-12 rounded-full object-cover "/>
-                           <div className=" bg-green-500 h-2 w-2 rounded-full ml-9 profOnline mt-[-9px] "></div>
-                           
-                        </div>
+                    <p className="text-steal text-xl">Ours Professor</p>
 
-                        <span className="text-[10px] font-medium opacity-60 text-center">
-                           Pr. Ursile
-                        </span>
+                    <div className="flex justify-between ">
+                            {onlineProfile?.map((online,i) => (
+                                <div key={i} className="mt-2">
+                                <img src={online.Image} alt="" className="h-14 w-14 rounded-full object-cover border-2 border-gray-400 "/>
+                                <div className=" bg-green-500 h-3 w-3 rounded-full ml-11 mt-[-18px] absolute ring-2 ring-gray-400 "></div>
+                               
+                                <h3 className="text-center text-[10px] font-medium opacity-70 mt-[-8px] ">
+                                {online?.name}
+                             </h3>
+                             </div>
+
+                            ))}
+                        
+                      
+                       
+
+                     
+
+                        
 
                     </div>
-                  
-                  
-                    
-                </div>
 
                 {/* Cards section */}
                 <div className="restaurant mt-2">
