@@ -24,6 +24,8 @@ const Home = () => {
 
     return(
         <div className="h-[100%] basis-80 ">
+         
+            
                 {/* Top section */}
                 
                 <div className="flex justify-between">
@@ -103,7 +105,7 @@ const Home = () => {
 
                 </div>
 
-                <div className="restaurantContainer py-2 flex justify-between items-center md:grid-rows-1">
+                <div className="restaurantContainer py-2 flex justify-between items-center md:grid-grid grid-cols-1">
                     <div className="studentCards w-[180px] bg-cyan-100 p-3 rounded-[10px]">
                         <div className="imgDiv h-[100] w-full overflow-hidden rounded-md">
                             <img  src={benja} alt="" className="w-full h-full object-cover"/>

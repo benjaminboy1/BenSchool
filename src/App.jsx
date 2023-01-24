@@ -18,7 +18,10 @@ function App() {
     { title:"Reporter", icon: "settings" }
   ]
   return (
-    <div className="flex">
+    
+    <div className="flex ">
+
+      
       <div className={`${open ? "w-72" : "w-20"} p-3 pt-3 duration-300 w-72 h-screen bg-slate relative`}>
       
     
