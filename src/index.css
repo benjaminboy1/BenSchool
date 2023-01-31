@@ -21,9 +21,13 @@ code {
   transform: scale(1.1);
   translate: all .8s ease-in-out;
 }
-.profOnline {
-  
-  
-  
-}
 
+.actif{
+  background-color: chartreuse;
+  height: 8px;
+  width: 8px;
+  border-radius: 10px;
+  padding-top: 4px;
+  margin-left: 34px;
+  position: static;
+}

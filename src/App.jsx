@@ -5,6 +5,7 @@ import pin from "./assets/images/pin.png";
 import benjami from "./assets/images/benjami.jpeg";
 import './App.css';
 import Home from './components/Home';
+import Navbar from './components/Navbar';
 
 
 function App() {
@@ -18,11 +19,13 @@ function App() {
     { title:"Reporter", icon: "settings" }
   ]
   return (
-    
+
+    <div>
+    <Navbar/>
     <div className="flex ">
 
       
-      <div className={`${open ? "w-72" : "w-20"} p-3 pt-3 duration-300 w-72 h-screen bg-slate relative`}>
+      <div className={`${open ? "w-72" : "w-20"} p-3 pt-3 duration-300 w-72 h-screen bg-slate relative   md:block  sm:hidden`}>
       
     
       <img 
@@ -77,6 +80,7 @@ function App() {
 
       </div>
     
+    </div>
     </div>
   );
 }

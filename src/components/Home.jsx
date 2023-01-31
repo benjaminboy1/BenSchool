@@ -8,6 +8,7 @@ import benja from "../assets/images/benja.jpg";
 
 
 
+
 const Home = () => {
 
     const onlineProfile = [
@@ -18,8 +19,20 @@ const Home = () => {
         {name: "Pr.T-leader", Image: require('../assets/images/prof5.jpeg'),},
         {name: "Pr.Pmiller", Image: require('../assets/images/prof6.jpg'),},
         {name: "Pr.Elvis", Image: require('../assets/images/prof7.jpg'),},
+        {name: "Pr.Elvis", Image: require('../assets/images/prof7.jpg'),},
+        {name: "Pr.Elvis", Image: require('../assets/images/prof7.jpg'),},
         {name: "Pr.Joseph", Image: require('../assets/images/prof8.jpg'),},
         {name: "Pr.JKK", Image: require('../assets/images/prof9.jpg'),},
+        {name: "Pr.JKK", Image: require('../assets/images/prof9.jpg'),},
+        {name: "Pr.Gracias", Image: require('../assets/images/prof1.jpeg')},
+        {name: "Pr.benjamin", Image: require('../assets/images/prof2.jpeg'),},
+        {name: "Pr.benjamin", Image: require('../assets/images/prof2.jpeg'),},
+        {name: "Pr.benjamin", Image: require('../assets/images/prof2.jpeg'),},
+        {name: "Pr.benjamin", Image: require('../assets/images/prof2.jpeg'),},
+        {name: "Pr.Joskky", Image: require('../assets/images/prof3.jpeg'),},
+        {name: "Pr.Ursille", Image: require('../assets/images/prof4.jpeg'),},
+
+       
     ]
 
     return(
@@ -30,7 +43,7 @@ const Home = () => {
                 
                 <div className="flex justify-between">
                 <div className="flex items-center pb-2 basis-1/2">
-                    <AiOutlineSearch className="text-slate text-[20px] cursor-pointer"/>
+                    <AiOutlineSearch className="text-slate text-[20px] cursor-pointer "/>
                     <input type="text" placeholder="Search your prefer" className="border-none outline-none text-base focus:outline-none " />
                 </div>
 
@@ -52,51 +65,63 @@ const Home = () => {
                     </span>
                     </div>
                 
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between ">
                         <div className="px-2 text-center border-r-2">
-                        <h3 className="text-[15px] font-bold text-cyan-800">45</h3>
-                        <small className="text-[14px] opacity-70">Specials</small>
+                        <h3 className="text-[15px] font-bold text-cyan-800">54</h3>
+                        <small className="text-[14px] opacity-70">Students Added</small>
                          </div>
                         
                          <div className="px-2 text-center border-r-2">
                         <h3 className="text-[15px] font-bold text-cyan-800">45</h3>
-                        <small className="text-[14px] opacity-70">Specials</small>
+                        <small className="text-[14px] opacity-70">Total Students</small>
                          </div>
                         
                 </div>
 
                 </div>
 
+            
+               
+
                     {/*Professor id */}
                     <p className="text-steal text-xl">Ours Professor</p>
 
-                    <div className="flex justify-between ">
+                    <div className="mx-start max-w-[50rem]">
+
+                            <div className="flex overflow-x-scroll">
+                            
+                            <div className="flex  space-x-2">
                             {onlineProfile?.map((online,i) => (
                                 <div key={i} className="mt-2">
-                                <img src={online.Image} alt="" className="h-14 w-14 rounded-full object-cover border-2 border-gray-400 "/>
-                                <div className=" bg-green-400 h-2 w-2 rounded-full ml-11 mt-[-14px] absolute ring-2 "></div>
-                               
-                                <h3 className="text-center text-[10px] font-medium opacity-70 mt-[-8px] ">
+                                <div className=" ">
+                                
+                                <img src={online.Image} alt="" className="h-14 w-14 rounded-full object-cover border-2 border-gray-400"/>
+                                <div className="bg-green-400 h-2 w-2 rounded-full ml-11 mt-[-14px]  ring-2"/>
+                                {/** <div className=" bg-green-400 h-2 w-2 rounded-full ml-11 mt-[-14px]  ring-2 "/>*/}
+                                
+                                </div>
+                                <h3 className="text-center text-[10px] font-medium opacity-70 mt-[-1px] ">
                                 {online?.name}
                              </h3>
                              </div>
 
                             ))}
+                            </div>
+                           
                         
                       
                        
 
-                     
-
-                        
-
+                        </div>
                     </div>
 
+                   
+
                 {/* Cards section */}
-                <div className="restaurant mt-2">
+                <div className="restaurant mt-20">
                 <div className="flex items-center justify-between">
-                    <div className="title">
-                        <h1 className="text-[24px] text-slate font-bold">New Students</h1>
+                    <div className="title ">
+                        <h1 className="text-[20px] text-slate font-bold">New Students</h1>
                         <span className="text-[13px] opacity-70"><strong>8 new students added,</strong>
                         we are already to registe the new students</span>
                     </div>
@@ -104,8 +129,9 @@ const Home = () => {
                         Show All <AiOutlineArrowRight  className="text-[20px]"/></button>
 
                 </div>
-
-                <div className="restaurantContainer py-2 flex justify-between items-center md:grid-grid grid-cols-1">
+                <div className="mr-[54%] flex justify-start ">
+                <div className="mx-auto flex flex-col justify-center max-w-lg">
+                <div className="flex flex-row gap-4 overflow-y-auto">
                     <div className="studentCards w-[180px] bg-cyan-100 p-3 rounded-[10px]">
                         <div className="imgDiv h-[100] w-full overflow-hidden rounded-md">
                             <img  src={benja} alt="" className="w-full h-full object-cover"/>
@@ -236,9 +262,88 @@ const Home = () => {
 
                         </div>
                     </div>
+                    <div className="studentCards w-[180px] bg-cyan-100 p-3 rounded-[10px]">
+                        <div className="imgDiv h-[100] w-full overflow-hidden rounded-md">
+                            <img  src={benja} alt="" className="w-full h-full object-cover"/>
+                        </div>
+                        <h1 className="restName text-base block text-center font-bold opacity-90">benjami boys</h1>
+                        <small className="block text-center text-[#606060] text-base font-medium">african men</small>
+                        <div className="info flex justify-center items-center">
+                           
+                            <div className="singleInfo grid mt-2 px-2">
+                                <AiFillStar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">2.4</h4>
 
+                            </div>
+                            <div className="singleInfo grid border-x-2 px-2">
+                                <AiOutlineDollar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">50</h4>
+
+                            </div>
+                            <div className="singleInfo grid px-2">
+                                <GiPathDistance className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">7km</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="studentCards w-[180px] bg-cyan-100 p-3 rounded-[10px]">
+                        <div className="imgDiv h-[100] w-full overflow-hidden rounded-md">
+                            <img  src={benja} alt="" className="w-full h-full object-cover"/>
+                        </div>
+                        <h1 className="restName text-base block text-center font-bold opacity-90">benjami boys</h1>
+                        <small className="block text-center text-[#606060] text-base font-medium">african men</small>
+                        <div className="info flex justify-center items-center">
+                           
+                            <div className="singleInfo grid mt-2 px-2">
+                                <AiFillStar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">2.4</h4>
+
+                            </div>
+                            <div className="singleInfo grid border-x-2 px-2">
+                                <AiOutlineDollar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">50</h4>
+
+                            </div>
+                            <div className="singleInfo grid px-2">
+                                <GiPathDistance className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">7km</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="studentCards w-[180px] bg-cyan-100 p-3 rounded-[10px]">
+                        <div className="imgDiv h-[100] w-full overflow-hidden rounded-md">
+                            <img  src={benja} alt="" className="w-full h-full object-cover"/>
+                        </div>
+                        <h1 className="restName text-base block text-center font-bold opacity-90">benjami boys</h1>
+                        <small className="block text-center text-[#606060] text-base font-medium">african men</small>
+                        <div className="info flex justify-center items-center">
+                           
+                            <div className="singleInfo grid mt-2 px-2">
+                                <AiFillStar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">2.4</h4>
+
+                            </div>
+                            <div className="singleInfo grid border-x-2 px-2">
+                                <AiOutlineDollar className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">50</h4>
+
+                            </div>
+                            <div className="singleInfo grid px-2">
+                                <GiPathDistance className="flex mt-auto justify-center items-center" />
+                                <h4 className="font-semibold text-sm text-[#4f4d58]">7km</h4>
+
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-
+            </div>
+        </div>
+        
                 </div>
                 
         </div>
