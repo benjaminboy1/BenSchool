@@ -12,9 +12,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  @apply bg-white dark:bg-gradient-to-r from-cyan-900 to-gray-800;
 }
 
 .studentCards:hover img {

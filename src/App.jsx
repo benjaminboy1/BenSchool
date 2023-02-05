@@ -6,10 +6,18 @@ import benjami from "./assets/images/benjami.jpeg";
 import './App.css';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
+import {RiLogoutBoxLine} from 'react-icons/ri';
+import {BsMoonStarsFill, BsFillSunFill} from 'react-icons/bs';
 
 
 function App() {
   const [open, setOpen] = useState(true);
+  const [theme, setTheme] = useState("light");
+  //conexion function
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
+
   const Menus = [
     
     { title:"Home", icon: "Home"},
@@ -64,13 +72,29 @@ function App() {
         {Menus.map((menu, index) => (
           <li key={index} 
           className={`text-cyan-700 text-ms font-bold flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md
-          ${menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-light-white"}`}>
+          ${menu.gap ? "p-[8rem]" : "mt-4"} ${index === 0 && "bg-light-white"}`}>
            <ion-icon name={`${menu.icon}`}></ion-icon>
             <span className={`${!open && 'hidden'} origin-left duration-200`}>{menu.title}</span>
           </li>
         ))}
       </ul>
+
+
+      
+
+          <div className="mt-24">
+            <div className={`${open ? "text-cyan-700 pt-[-8rem]" : " text-sm pt-[8rem] text-cyan-100"} flex space-x-4 justify-center text-cyan-700 text-lg`}>
+              <p className="hover:text-sky-400"><RiLogoutBoxLine/></p>
+              {/**darkmode button */}
+              <button onClick={handleThemeSwitch} className="hover:text-sky-400">
+              {theme === 'light' ? <BsMoonStarsFill/> : <BsFillSunFill/>}
+              </button>
+              
+            </div>
+          </div>
+
       </div>
+      
      
       
       <div className="p-7 text-2xl font-semibold flex-1 h-screen">
