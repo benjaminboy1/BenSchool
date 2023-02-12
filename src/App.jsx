@@ -1,5 +1,6 @@
 
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
+import React, { createContext } from 'react';
 import control from "./assets/images/control.png";
 import pin from "./assets/images/pin.png";
 import benjami from "./assets/images/benjami.jpeg";
@@ -10,13 +11,24 @@ import {RiLogoutBoxLine} from 'react-icons/ri';
 import {BsMoonStarsFill, BsFillSunFill} from 'react-icons/bs';
 
 
+export const context = createContext();
+
+
 function App() {
   const [open, setOpen] = useState(true);
   const [theme, setTheme] = useState("light");
-  //conexion function
-  const handleThemeSwitch = () => {
+  
+   //le function de la connexion
+   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
+}
+useEffect(() => {
+  if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+  } else {
+      document.documentElement.classList.remove("dark"); 
   }
+}, [theme]);
 
   const Menus = [
     
@@ -59,7 +71,7 @@ function App() {
         <div className={` ${!open && "hidden"} origin-left duration-200 text-center mt-4`}>
         <h4 className="text-gray-500 mt-2">Welcome,</h4>
         <h2 className="text-cyan-600  font-bold">
-          Benjamin Mumbita
+          Benjamin M
         </h2>
         <h3 className=" text-sm text-gray-400">
           Front-End Developer</h3>
@@ -97,10 +109,16 @@ function App() {
       
      
       
-      <div className="p-7 text-2xl font-semibold flex-1 h-screen">
+      <div className={`p-7 text-2xl font-semibold flex-1 h-screen dark:bg-gradient-to-r from-[#00111B] via-[#002233] to-[#02374B] ${theme === 'dark' ? 'text-gray-300 ' : 'text-gray-800'}`}>
        
+         <context.Provider value={{setTheme}}>
+          
+         <Home/>
+         </context.Provider>
+         
+      
        
-        <Home/>
+     
 
       </div>
     
@@ -109,4 +127,4 @@ function App() {
   );
 }
 
-export default App;
+export default App ;

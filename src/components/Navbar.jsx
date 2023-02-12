@@ -8,8 +8,8 @@ const Navbar = () => {
     return(
         <div className="w-full h-10 bg-slate md:hidden sm:block">
             <div>
-                <div className="flex space-x-4">
-                    <div className="mt-1 ">
+                <div className="flex  sm:space-x-[40%]">
+                    <div className="mt-1 ml-1 ">
                     <img  alt="" src={pin} className="w-8 h-8" />
                     </div>
 

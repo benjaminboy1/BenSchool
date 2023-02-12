@@ -3,10 +3,15 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  darkMode: "class",
+  darkMode: 'class',
   theme: {
     
     extend: {
+      colors: {
+        'gradient1': '#00111B',
+        'gradient2':'#002233',
+        'gradient3': '#02374B',
+      },
       screens: {
         'sm': '276px',
         // => @media (min-width: 576px) { ... }

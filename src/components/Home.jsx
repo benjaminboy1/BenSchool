@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import 'swiper/css';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
@@ -9,6 +8,8 @@ import {AiOutlineMessage, AiOutlineAppstore, AiOutlineArrowRight, AiOutlineSearc
 import {SiGooglemaps} from "react-icons/si";
 import {GoVerified} from "react-icons/go";
 import {BsInfoCircle} from "react-icons/bs";
+
+
 
 
 
@@ -65,38 +66,32 @@ const Home = () => {
         {name:"Benjamin.Musamba", from:"New student from USA", picture: require('../assets/images/benja.jpg'), icone:<GoVerified/>, icon1:<SiGooglemaps/>,  icon2:<BsInfoCircle/>, icon3:<AiOutlineMessage/>},
     ]
 
-    const [theme, setTheme] = useState("light");
-
-     //conexion function
-  const handleThemeSwitch = (handle) => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
 
 
     return(
         
-        <div className="h-[100%] basis-80 ">
+        <div  className={`h-[100%] basis-80`}>
          
             
                 {/* Top section */}
                 
                 <div className="flex justify-between">
                 <div className="flex items-center pb-2 basis-1/2">
-                    <AiOutlineSearch className="text-slate text-[20px] cursor-pointer "/>
-                    <input type="text" placeholder="Search your prefer" className="border-none outline-none text-base focus:outline-none " />
+                    <AiOutlineSearch className="text-slate text-[20px] cursor-pointer icon"/>
+                    <input type="text" placeholder="Search your prefer" className="border-none outline-none text-base focus:outline-none bg-transparent" />
                 </div>
 
                 <div className="flex gap-2 items-center">
-                    <AiOutlineAppstore className="text-slate cursor-pointer text-[23px] hover:text-[30px] transition-all"/>
+                    <AiOutlineAppstore className="text-cyan-600 cursor-pointer text-[23px] hover:text-[30px] transition-all"/>
                     <button className="rounded-[5px] bg-slate text-white text-base hover:bg-[#55545e] px-2 py-1 transition-all md:block hidden ">Call Leader</button>
                 </div>
                 </div>
                 <div className=" border-b-2"></div>
 
                 {/* title div */}
-                <div className="flex items-center justify-between mt-[-2px] sm:">
+                <div className="flex items-center justify-between mt-[-4px] sm:">
                     <div className="title">
-                        <h1 className="text-[25px] tracking-[2px] font-black">
+                        <h1 className="text-[25px] tracking-[2px] font-black ">
                            Home 
                         </h1>
                     <span className="text-[13px] opacity-70 mt-[-4px]">
@@ -104,14 +99,14 @@ const Home = () => {
                     </span>
                     </div>
                 
-                <div className="flex items-center justify-between mt-[-4px] ">
-                        <div className="px-2 text-center border-r-2 mt-[-4px]">
-                        <h3 className="text-[15px] font-bold text-cyan-800">54</h3>
+                <div className="flex items-center justify-between mt-[-2px] ">
+                        <div className="px-2 text-center border-r-2 mt-[2px]">
+                        <h3 className="text-[15px] font-bold text-cyan-500">54</h3>
                         <h4 className="text-[14px] opacity-70">Students Added</h4>
                          </div>
                         
-                         <div className="px-2 text-center border-r-2 mt-[-4px]">
-                        <h3 className="text-[15px] font-bold text-cyan-800">45</h3>
+                         <div className="px-2 text-center border-r-2 mt-[1px]">
+                        <h3 className="text-[15px] font-bold text-cyan-500">895</h3>
                         <h4 className="text-[14px] opacity-70">Total Students</h4>
                          </div>
                         
@@ -221,10 +216,10 @@ const Home = () => {
                    
 
                 {/* Cards section */}
-                <div className="restaurant border">
+                <div className="restaurant">
                 <div className="flex items-center justify-between">
                     <div className="title mt-[-9px]">
-                        <h1 className="text-[20px] text-slate font-bold">New Students</h1>
+                        <h1 className="text-[20px] font-bold">New Students</h1>
                         <span className="text-[13px] opacity-70"><strong>8 new students added,</strong>
                         we are already to registe the new students</span>
                     </div>
@@ -234,7 +229,7 @@ const Home = () => {
                             before:content-[attr(data-tip)]
                             before:absolute
                             before:px-3 before:py-2
-                            before:left-1/2 before:-top-3
+                            before:left-2 before:-top-3
                             before:w-max before:max-w-xs
                             before:-translate-x-1/2 before:-translate-y-full
                             before:bg-gray-600 before:text-white
@@ -242,7 +237,7 @@ const Home = () => {
                             before:transition-all 
                             
                             after:absolute
-                            after:left-1/2 after:-top-3
+                            after:left-2 after:-top-3
                             after:h-0 after:w-0
                             after:-translate-x-1/2 after:border-8
                             after:border-t-gray-700 
