@@ -31,3 +31,10 @@ code {
   margin-left: 34px;
   position: static;
 }
+.image-upload >label >input{
+  display: none;
+}
+input #date{
+  border-radius: 5px;
+  background-color: rgb(197, 25, 25);
+}
