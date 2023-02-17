@@ -120,6 +120,9 @@ const Payment = ()=>{
         </div>
         <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#agree" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
     </div>
+                <div>
+                    <button>Submit</button>
+                </div>
 
                 </div>
             </div>
