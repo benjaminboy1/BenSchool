@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import {RiLogoutBoxLine} from 'react-icons/ri';
 import {BsMoonStarsFill, BsFillSunFill} from 'react-icons/bs';
 import Register from './components/Register';
+import Payment from './components/payment';
 
 
 export const context = createContext();
@@ -115,7 +116,7 @@ useEffect(() => {
          <context.Provider value={{setTheme}}>
           
          {/**<Home/>*/}
-         <Register/>
+         <Payment/>
          </context.Provider>
          
       
