@@ -58,13 +58,7 @@ const Payment = ()=>{
                         <input type="number" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card number"/>
                     </div>
                     <div className="mb-2">
-                        <input type="text" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card CVC"/>
-                    </div>
-                    <div className="mb-2">
-                        <input type="text" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="motive"/>
-                    </div>
-                    <div className="mb-2">
-                        <input list="motif" type="date" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Date"/>
+                        <input list="motif" type="text" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card CVC"/>
                         <datalist id="motif">
                             <option value="School fees"></option>
                             <option value="School fees"></option>
@@ -72,11 +66,24 @@ const Payment = ()=>{
 
                         </datalist>
                     </div>
+                    <div className="mb-2">
+                       <select class="h-8 w-full text-sm px-4 text-gray-700 bg-gray-300 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500
+                        dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Motif">
+                         <option>Motif</option>
+                         <div className="border-2"></div>
+                         <option>Jakarta</option>
+                         <option>Tangerang</option>
+                         <option>Bandung</option>
+                       </select>
+                    </div>
+                    <div className="mb-2">
+                        <input  type="date" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Date"/>
+                    </div>
                     </div>
                     
                 </div>
                 <div className="text-center py-2">
-                    <butto  className="bg-green-700 px-4 rounded ">Pay Now!</butto>
+                    <button  className="bg-green-700 px-8 text-lg hover:bg-green-800 rounded ">Pay Now!</button>
                 </div>
                 <div>
                     <div className="flex justify-end"><BsFillPatchQuestionFill className="hover:text-cyan-400"/></div>
