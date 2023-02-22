@@ -164,6 +164,61 @@ const Payment = ()=>{
 
             </div>
         </div>
+
+
+
+        <div className="ms:block hidden md:block">
+            <div className="border-cyan-400 border-2 p-4 rounded-lg">
+                {/** */}
+                <div className="">
+                    <p className="text-xl text-center">RESULT</p>
+                     {/** */}
+                    <div className="border-cyan-300 border-2 rounded mt-10">
+                        <div className="ml-8 mt-[-2rem] ">
+                            <div className="h-20 w-20 bg-gray-300 rounded-full border-2 border-cyan-300"/>
+                        </div>
+                        <div  className="px-4 ml-[10rem] mt-[-2.6rem] space-y-1">
+                        <div className="text-sm flex space-x-2 bg-gray-400 h-4">
+                        </div>
+                        <div className="mb-2 space-y-1">
+                            <p className="text-sm opacity-80 bg-gray-300 h-4 gap-2"></p>
+                            <p className="text-sm opacity-80 bg-gray-300 h-4"></p>
+                           
+                        </div>
+                        </div>
+
+                        <div className="flex space-x-4 ml-5 mt-1 p-2 h-2 bg-gray-400 w-28">     
+                        </div>
+                        <div className="mt-2 border border-dashed"></div>
+                        <div className="flex space-x-3 text-sm opacity-80 ml-2 mr-2 p-2 ">
+                  
+                              <div className="space-y-2">
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                               </div>
+                            <div className="space-y-2">
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                              <h3 className="bg-gray-400 h-3 w-40"></h3>
+                               </div>
+                       
+                   
+                            
+                        </div>
+                        
+
+                    </div>
+                    <div className="flex justify-between mt-4">
+                        <button className=" px-8 text-lg bg-gray-400 h-10 w-28 rounded"></button>
+                        <button className=" px-8 text-lg bg-gray-400 h-10 w-28 rounded"></button>
+                       
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
         
             
         </div>
