@@ -1,9 +1,11 @@
 import React from "react";
 import { useEffect, useState} from "react";
-import {FaPaypal, FaMoneyCheckAlt} from "react-icons/fa";
-import {FcMoneyTransfer} from "react-icons/fc";
+import {FaCcPaypal, FaMoneyCheckAlt} from "react-icons/fa";
+
 import {DiYii} from "react-icons/di";
-import {BsFillPatchQuestionFill, BsFillCheckSquareFill} from "react-icons/bs";
+import mpesa from "../assets/images/mpesa.png";
+import orangemoney from "../assets/images/orangemoney.png";
+import {BsCreditCard2Back, BsFillPatchQuestionFill, BsFillCheckSquareFill} from "react-icons/bs";
 import {AiFillWarning, AiOutlineWechat, AiTwotonePrinter, AiOutlineBarChart, AiOutlineFileExcel} from "react-icons/ai";
 import {GoVerified} from "react-icons/go";
 import prof4 from "../assets/images/prof4.jpeg";
@@ -16,14 +18,16 @@ const Payment = ()=>{
 
     const [loading, setLoading] = useState(false);
     const [title, setTitle] = useState("");
+    const [name, setName] = useState("");
 
 
     useEffect(()=> {
         setTimeout(() => {
             setLoading(true);
-            setTitle("Payment");
+            setTitle("PAYMENT");
+            setName("Benjamin. Mumbita");
             
-        }, 1000)
+        }, 5000)
     })
 
     const liens = [ 
@@ -84,19 +88,30 @@ const Payment = ()=>{
 
                 </div>
                 <div>
-                    <p className="text-center py-2">Payment Methode</p>
+                    <div>
+                        {loading ? (<p className="text-center py-2">Payment Methode</p>) : (<Skeleton height={25} width={200} className="ml-[5rem]"/>)}
+                    </div>
+                    
                     <div className=" ">
-                        <div className="cards flex justify-between ">
-                            <div className=""><FaPaypal className="text-[50px] md:text-20 hover:text-cyan-300"/></div>
-                            <div><FaMoneyCheckAlt className="text-[50px] md:text-20 hover:text-cyan-300"/></div>
-                            <div><FcMoneyTransfer className="text-[50px] md:text-20 hover:text-cyan-300"/></div>
-                            <div><DiYii className="text-[50px] md:text-20 hover:text-cyan-300"/></div>
+                        <div className="">
+                         
+                            <div className="cards flex justify-between">
+                            <div>{loading ? ( <FaCcPaypal className="text-[50px] md:text-20 hover:text-cyan-300"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<img src={orangemoney} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<img src={mpesa} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<BsCreditCard2Back className="text-[50px] md:text-20 hover:text-cyan-300"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            </div>
+                           
+                            
                         </div>
                         <div className="border2 border:bg-gray-300"></div>
                     </div>
                 </div>
                 <div>
-                    <p className="text-center py-2">Info Card</p>
+                    <div className="">
+                        {loading ? (<p className="text-center py-2">Info Card</p>) : (<Skeleton height={28} width={100} className="ml-[8rem]"/>)}
+                    </div>
+                    
                     <div className="flex grid md:grid-cols-2 gap-2">
                     <div className="mb-2">
                         {loading ? (<input type="number" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card number"/>) : ( <Skeleton className="h-8 w-full"/>)
@@ -132,11 +147,11 @@ const Payment = ()=>{
                     
                 </div>
                 <div className="text-center py-1">
-                    {loading ? (<button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded ">Pay Now!</button>) : (<Skeleton className="h-8 w-5"/>)}
+                    {loading ? (<button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded ">Pay Now!</button>) : (<Skeleton height={40} width={100} className="h-8 w-5"/>)}
                     
                 </div>
                 <div className="">{
-                    loading ? (<div className="flex justify-end"><BsFillPatchQuestionFill className="hover:text-cyan-400"/></div>) : (<Skeleton margin-right={40} width={30} height={30} className="flex justify-end h-4 p-2 w-[-2rem] "/>)
+                    loading ? (<div className="flex justify-end"><BsFillPatchQuestionFill className="hover:text-cyan-400"/></div>) : (<Skeleton margin-right={40} border-Radius={10} width={30} height={30} className="ml-[20rem] "/>)
                 }
                     
                 </div>
@@ -148,24 +163,34 @@ const Payment = ()=>{
         <div className="ms:block hidden md:block">
             <div className="border-cyan-400 border-2 p-4 rounded-lg">
                 <div className="">
-                    <p className="text-xl text-center">RESULT</p>
+                <div>
+                    {loading ? (<p className="text-xl text-center">RESULT</p>) : (<Skeleton height={30} width={100} className="ml-[12rem]"/>)}
+                </div>
+                    
                     <div className="border-cyan-300 border-2 rounded mt-10">
                         <div className="ml-8 mt-[-2rem]">{
-                            loading ? (<img src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300 skeleton"/>) : (<Skeleton height={80} width={80} border-radius={20}/>)
+                            loading ? (<img src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300 skeleton"/>) : (<Skeleton height={80} width={80} circle={true} />)
                         }
                             
                         </div>
                         <div  className="px-4 ml-[10rem] mt-[-2.6rem]">
                         <div className="text-sm flex space-x-2">
-                            <h2>Benjamin. Mumbita</h2> <h4 className="text-sm mt-[0.2rem] text-cyan-400"><GoVerified/></h4>
+                            {loading ? (<h2>Benjamin. Mumbita</h2> ) : (<Skeleton width={200} height={15} className="h-4 w-full"/>)
+
+                           
+                            }
+                            <h4 className="text-sm mt-1 text-cyan-400">
+                                {loading ? (<GoVerified/>) : (<Skeleton/>)}</h4>
+                            
                         </div>
                         <div className="mb-2">
-                            <p className="text-sm opacity-80">@Dev. Mobile 1st</p>
-                            <p className="text-sm opacity-50">benjaminmumbita10.@gmail.com</p>
+                            {loading ? (<p className="text-sm opacity-80">@Dev. Mobile 1st</p>) : (<Skeleton height={15} width={150} className="top-[-0.4rem]"/>)}
+                            {loading ? (<p className="text-sm opacity-50">benjaminmumbita10.@gmail.com</p>) : (<Skeleton height={15} width={215} className="top-[-0.8rem]"/>)}
+                            
                         </div>
                         </div>
-
-                        <div className="flex space-x-4 ml-5 mt-[-2rem] p-2">{
+                        <div>
+                            {loading ? (<div className="flex space-x-4 ml-5 mt-[-2rem] p-2">{
                             liens.map((liens, i)=>(
                                 <p className="hover:text-cyan-400" key={i}>
                                     {liens.icons}
@@ -174,16 +199,19 @@ const Payment = ()=>{
                             )
                             }
                             
+                        </div>) : (<Skeleton width={100} className="ml-[2rem] top-[-2rem]" />)}
                         </div>
+                        
                         <div className="border border-dashed"></div>
                         <div className="text-sm opacity-80 ml-14 mr-28 p-2">
                             {
                                 details.map((details, i)=>(
                             <div key={i}>
-                              <div className="flex justify-between">
+                                {loading ? (<div className="flex justify-between">
                               <h3 className="flex"><h5 className="mr-2 mt-1"><BsFillCheckSquareFill/></h5>{details.names}</h3>
                                <h3 className="flex"><h5 className="mr-2 mt-1"><BsFillCheckSquareFill/></h5>{details.name}</h3>
-                               </div>
+                               </div>) : (<Skeleton width={300} height={15} className="tspace-y-4"/>)}
+                              
                             </div>
                                 ))
                             }
@@ -193,8 +221,14 @@ const Payment = ()=>{
 
                     </div>
                     <div className="flex justify-between mt-4">
-                        <button className="bg-red-400 px-8 text-lg hover:bg-red-500 rounded"><h6 className="ml-5"><AiOutlineFileExcel/></h6>Cancel</button>
-                        <button className="bg-green-500 px-8 text-lg hover:bg-green-600 rounded"><h6 className="ml-3"><AiTwotonePrinter/></h6>Print</button>
+                        <div className="">
+                            {loading ? (<button className="bg-red-400 px-8 text-lg hover:bg-red-500 rounded">
+                            <h6 className="ml-5"><AiOutlineFileExcel/></h6>Cancel</button>) : (<Skeleton height={40} width={110}/>)}
+                        </div>
+                        <div>
+                            {loading ? (<button className="bg-green-500 px-8 text-lg hover:bg-green-600 rounded"><h6 className="ml-3"><AiTwotonePrinter/></h6>Print</button>) : (<Skeleton height={40} width={110}/>)}
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -202,61 +236,7 @@ const Payment = ()=>{
         </div>
 
 
-            {/**
-        <div className="ms:block hidden md:block">
-            <div className="border-cyan-400 border-2 p-4 rounded-lg">
-                 
-                <div className="">
-                    <p className="text-xl text-center">RESULT</p>
-                     
-                    <div className="border-cyan-300 border-2 rounded mt-10 animate-pulse">
-                        <div className="ml-8 mt-[-2rem] ">
-                            <div className="h-20 w-20 bg-gray-300 rounded-full border-2 border-cyan-300"/>
-                        </div>
-                        <div  className="px-4 ml-[10rem] mt-[-2.6rem] space-y-1">
-                        <div className="text-sm flex space-x-2 bg-gray-400 h-4">
-                        </div>
-                        <div className="mb-2 space-y-1">
-                            <p className="text-sm opacity-80 bg-gray-300 h-4 gap-2"></p>
-                            <p className="text-sm opacity-80 bg-gray-300 h-4"></p>
-                           
-                        </div>
-                        </div>
-
-                        <div className="flex space-x-4 ml-5 mt-1 p-2 h-2 bg-gray-400 w-28">     
-                        </div>
-                        <div className="mt-2 border border-dashed"></div>
-                        <div className="flex space-x-3 text-sm opacity-80 ml-2 mr-2 p-2 ">
-                  
-                              <div className="space-y-2">
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                               </div>
-                            <div className="space-y-2">
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                              <h3 className="bg-gray-400 h-3 w-40"></h3>
-                               </div>
-                       
-                   
-                            
-                        </div>
-                        
-
-                    </div>
-                    <div className="flex justify-between mt-4 hoverflow-hidden animate-pulse shadow before:absolute before:inset-0 before:-translate-x-full before:gradient-to-r before:from-transparent before:via-white hover:shadow-lg before:animate-[shimmer-1.5s-infinite]">
-                        <button className=" px-8 text-lg bg-gray-500 h-10 w-28 rounded"></button>
-                        <button className=" px-8 text-lg bg-gray-500 h-10 w-28 rounded"></button>
-                       
-                        
-                    </div>
-                </div>
-                
-            </div>
-       
-        </div>
-         */}
+          
             
         </div>
     )
