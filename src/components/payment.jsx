@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState} from "react";
 import {FaPaypal, FaMoneyCheckAlt} from "react-icons/fa";
 import {FcMoneyTransfer} from "react-icons/fc";
 import {DiYii} from "react-icons/di";
@@ -6,10 +7,24 @@ import {BsFillPatchQuestionFill, BsFillCheckSquareFill} from "react-icons/bs";
 import {AiFillWarning, AiOutlineWechat, AiTwotonePrinter, AiOutlineBarChart, AiOutlineFileExcel} from "react-icons/ai";
 import {GoVerified} from "react-icons/go";
 import prof4 from "../assets/images/prof4.jpeg";
+import Skeleton from "react-loading-skeleton"
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 
 const Payment = ()=>{
+
+    const [loading, setLoading] = useState(false);
+    const [title, setTitle] = useState("");
+
+
+    useEffect(()=> {
+        setTimeout(() => {
+            setLoading(true);
+            setTitle("Payment");
+            
+        }, 1000)
+    })
 
     const liens = [ 
         {icons:<AiOutlineWechat/>},
@@ -34,25 +49,37 @@ const Payment = ()=>{
             {/**first card */}
         <div className="py-1 px-8 border-2 rounded-md border-cyan-300 ">
             <div>
-                <p className="text-center py-2 text-xl">PAYMENT</p>
+                <p className="text-center py-2 text-xl">{title || <Skeleton  className="w-full"/>}</p>
                 <div className="flex gap-2 grid md:grid-cols-2">
                     <div className="mb-2">
-                        <input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>) : ( <Skeleton width="10rem" className="h-8 w-full"/> 
+                         )}
                     </div>
                     <div className="mb-2">
-                        <input text="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="text" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="First Name" required/>) : ( <Skeleton className="h-8 w-full"/> 
+                         )}
                     </div>
                     <div className="mb-2">
-                        <input type="text" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Midle Name" required/>) : ( <Skeleton className="h-8 w-full"/> 
+                         )}
                     </div>
                     <div className="mb-2">
-                        <input type="text" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Second Name" required/>) : ( <Skeleton className="h-8 w-full"/> 
+                         )}
                     </div>
                     <div className="mb-2">
-                        <input type="text" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>) : ( <Skeleton className="h-8 w-full"/> 
+                         )}
                     </div>
                     <div className="mb-2">
-                        <input type="text" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>
+                        
+                        {loading ? (<input type="number" className="dark:bg-gray-700 bg-gray-300 h-8 text-sm rounded-lg block w-full p-2 dark:placeholder-gray-400 placeholder-gray-500 dark:focus:ring-blue-500 " placeholder="Id student" required/>) : ( <Skeleton className="h-8 w-full"/> 
+                         )}
                     </div>
 
                 </div>
@@ -72,39 +99,46 @@ const Payment = ()=>{
                     <p className="text-center py-2">Info Card</p>
                     <div className="flex grid md:grid-cols-2 gap-2">
                     <div className="mb-2">
-                        <input type="number" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card number"/>
+                        {loading ? (<input type="number" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card number"/>) : ( <Skeleton className="h-8 w-full"/>)
+
+                        }
+                        
                     </div>
                     <div className="mb-2">
-                        <input list="motif" type="text" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card CVC"/>
+                        {loading ? (    <input list="motif" type="text" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Card CVC"/>) : (<Skeleton className="h-8 w-full" />)}
+                    
                         <datalist id="motif">
                             <option value="School fees"></option>
                             <option value="School fees"></option>
                             <option value="School fees"></option>
-
                         </datalist>
                     </div>
                     <div className="mb-2">
-                       <select class="h-8 w-full text-sm px-4 text-gray-700 bg-gray-300 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500
+                        {loading ? (<select class="h-8 w-full text-sm px-4 text-gray-700 bg-gray-300 border border-gray-300 rounded-md dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500
                         dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Motif">
                          <option className="text-center">Motif</option>
                          <option>Controle($50)</option>
                          <option>First slice($200)</option>
                          <option>Second slice($200)</option>
-                         <option>Third slice($100)</option>
-                         
-                       </select>
+                         <option>Third slice($100)</option>  
+                       </select>) : (<Skeleton className="h-8 w-full"/>)}
+                       
                     </div>
                     <div className="mb-2">
-                        <input  type="date" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Date"/>
+                        {loading ? (<input  type="date" className="h-8 w-full dark:bg-gray-700 text-sm p-2 rounded-lg bg-gray-300 dark:placeholder-gray-400 placeholder-gray-500" placeholder="Date"/>) : (<Skeleton className="h-8 w-full"/>)}
+                        
                     </div>
                     </div>
                     
                 </div>
                 <div className="text-center py-1">
-                    <button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded ">Pay Now!</button>
+                    {loading ? (<button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded ">Pay Now!</button>) : (<Skeleton className="h-8 w-5"/>)}
+                    
                 </div>
-                <div>
-                    <div className="flex justify-end"><BsFillPatchQuestionFill className="hover:text-cyan-400"/></div>
+                <div className="">{
+                    loading ? (<div className="flex justify-end"><BsFillPatchQuestionFill className="hover:text-cyan-400"/></div>) : (<Skeleton margin-right={40} width={30} height={30} className="flex justify-end h-4 p-2 w-[-2rem] "/>)
+                }
+                    
                 </div>
             </div>
              
@@ -116,8 +150,10 @@ const Payment = ()=>{
                 <div className="">
                     <p className="text-xl text-center">RESULT</p>
                     <div className="border-cyan-300 border-2 rounded mt-10">
-                        <div className="ml-8 mt-[-2rem] ">
-                            <img src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300"/>
+                        <div className="ml-8 mt-[-2rem]">{
+                            loading ? (<img src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300 skeleton"/>) : (<Skeleton height={80} width={80} border-radius={20}/>)
+                        }
+                            
                         </div>
                         <div  className="px-4 ml-[10rem] mt-[-2.6rem]">
                         <div className="text-sm flex space-x-2">
@@ -166,14 +202,14 @@ const Payment = ()=>{
         </div>
 
 
-
+            {/**
         <div className="ms:block hidden md:block">
             <div className="border-cyan-400 border-2 p-4 rounded-lg">
-                {/** */}
+                 
                 <div className="">
                     <p className="text-xl text-center">RESULT</p>
-                     {/** */}
-                    <div className="border-cyan-300 border-2 rounded mt-10">
+                     
+                    <div className="border-cyan-300 border-2 rounded mt-10 animate-pulse">
                         <div className="ml-8 mt-[-2rem] ">
                             <div className="h-20 w-20 bg-gray-300 rounded-full border-2 border-cyan-300"/>
                         </div>
@@ -209,17 +245,18 @@ const Payment = ()=>{
                         
 
                     </div>
-                    <div className="flex justify-between mt-4">
-                        <button className=" px-8 text-lg bg-gray-400 h-10 w-28 rounded"></button>
-                        <button className=" px-8 text-lg bg-gray-400 h-10 w-28 rounded"></button>
+                    <div className="flex justify-between mt-4 hoverflow-hidden animate-pulse shadow before:absolute before:inset-0 before:-translate-x-full before:gradient-to-r before:from-transparent before:via-white hover:shadow-lg before:animate-[shimmer-1.5s-infinite]">
+                        <button className=" px-8 text-lg bg-gray-500 h-10 w-28 rounded"></button>
+                        <button className=" px-8 text-lg bg-gray-500 h-10 w-28 rounded"></button>
                        
                         
                     </div>
                 </div>
-
+                
             </div>
+       
         </div>
-        
+         */}
             
         </div>
     )

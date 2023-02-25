@@ -38,3 +38,16 @@ input #date{
   border-radius: 5px;
   background-color: rgb(197, 25, 25);
 }
+.skeleton{
+  animate: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading{
+  0%{
+    background-color: hsd(200, 20%, 70%); 
+  }
+  100% {
+    background-color: hsd(200, 20%, 95%);
+
+  }
+}
