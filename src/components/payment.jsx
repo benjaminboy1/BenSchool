@@ -95,11 +95,11 @@ const Payment = ()=>{
                     <div className=" ">
                         <div className="">
                          
-                            <div className="cards flex justify-between">
-                            <div>{loading ? ( <FaCcPaypal className="text-[50px] md:text-20 hover:text-cyan-300"/>) : (<Skeleton height={45} width={65}/>)}</div>
-                            <div>{loading ? (<img src={orangemoney} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div className="cards flex justify-between space-x-4">
+                            <div>{loading ? ( <FaCcPaypal className="text-[50px] md:text-20 hover:text-cyan-700"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<img src={orangemoney} className="h-10 hover:text-cyan-700 cursor-pointer"/>) : (<Skeleton height={45} width={65}/>)}</div>
                             <div>{loading ? (<img src={mpesa} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
-                            <div>{loading ? (<BsCreditCard2Back className="text-[50px] md:text-20 hover:text-cyan-300"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<BsCreditCard2Back className="text-[50px] md:text-20 hover:text-cyan-700"/>) : (<Skeleton height={45} width={65}/>)}</div>
                             </div>
                            
                             

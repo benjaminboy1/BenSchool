@@ -1,16 +1,21 @@
 
 import {useEffect, useState} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React, { createContext } from 'react';
+
 import control from "./assets/images/control.png";
 import pin from "./assets/images/pin.png";
 import benjami from "./assets/images/benjami.jpeg";
 import './App.css';
-import Home from './components/Home';
-import Navbar from './components/Navbar';
 import {RiLogoutBoxLine} from 'react-icons/ri';
 import {BsMoonStarsFill, BsFillSunFill} from 'react-icons/bs';
+
+import Home from './components/Home';
+import Navbar from './components/Navbar';
 import Register from './components/Register';
-import Payment from './components/payment';
+import Payment from './components/Payment';
+import Reporter from './components/Reporter';
+
 
 
 export const context = createContext();
@@ -34,11 +39,10 @@ useEffect(() => {
 
   const Menus = [
     
-    { title:"Home", icon: "Home"},
-    { title:"Search", icon: "search" },
-    { title:"Register", icon: "person-add-outline" },
-    { title:"Payement", icon: "cash-outline"},
-    { title:"Reporter", icon: "settings" }
+    { title:"Home", icon: "Home", link:"Home"},
+    { title:"Register", icon: "person-add-outline", link:"Register" },
+    { title:"Payment", icon: "cash-outline", link:"Payment"},
+    { title:"Reporter", icon: "settings", link:"Reporter"}
   ]
   return (
 
@@ -84,19 +88,21 @@ useEffect(() => {
 
       <ul className='pt-6'>
         {Menus.map((menu, index) => (
+          
           <li key={index} 
           className={`text-cyan-700 text-ms font-bold flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md
           ${menu.gap ? "p-[8rem]" : "mt-4"} ${index === 0 && "bg-light-white"}`}>
            <ion-icon name={`${menu.icon}`}></ion-icon>
-            <span className={`${!open && 'hidden'} origin-left duration-200`}>{menu.title}</span>
+            <span className={`${!open && 'hidden'} origin-left duration-200`}><a href={menu.link}>{menu.title}</a></span>
           </li>
+        
         ))}
       </ul>
 
 
       
 
-          <div className="mt-24">
+          <div className="mt-[10rem]">
             <div className={`${open ? "text-cyan-700 pt-[-8rem]" : " text-sm pt-[8rem] text-cyan-100"} flex space-x-4 justify-center text-cyan-700 text-lg`}>
               <p className="hover:text-sky-400"><RiLogoutBoxLine/></p>
               {/**darkmode button */}
@@ -112,14 +118,25 @@ useEffect(() => {
      
       
       <div className={`p-7 text-2xl font-semibold flex-1 h-screen dark:bg-gradient-to-r from-[#00111B] via-[#002233] to-[#02374B] ${theme === 'dark' ? 'text-gray-300 ' : 'text-gray-800'}`}>
+          <BrowserRouter>
+          <Routes>
+            <Route path="/*" element={<Home />}/>
+            <Route path="Register" element={<Register/>}/>
+            <Route path="Payment" element={<Payment/>}/> 
+            <Route path="Reporter" element={<Reporter/>}/>
+          </Routes>
+          </BrowserRouter>
+          
        
+       
+       {/** 
          <context.Provider value={{setTheme}}>
           
-         {/**<Home/>*/}
+         
          <Payment/>
          </context.Provider>
          
-      
+        */}
        
      
 

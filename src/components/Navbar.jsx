@@ -1,10 +1,19 @@
 import React from "react";
-import {ImMenu3} from 'react-icons/im'
+import {ImMenu3, ImMenu4} from 'react-icons/im'
 import pin from "../assets/images/pin.png"
+import { useState } from "react";
+
 
 
 
 const Navbar = () => {
+        const [open, setOpen] = useState(true);
+        const menu = [
+        { title:"Home", icon: "Home", link:"Home"},
+        { title:"Register", icon: "person-add-outline", link:"Register" },
+        { title:"Payment", icon: "cash-outline", link:"Payment"},
+        { title:"Reporter", icon: "settings", link:"Reporter"},]
+
     return(
         <div className="w-full h-10 bg-slate md:hidden sm:block">
             <div>
@@ -15,10 +24,23 @@ const Navbar = () => {
 
                     <h1 className="text-white mt-2">BenSchool</h1>
                 </div>
-                <div className="flex justify-end">
-                    <button  className="text-cyan-500 text-[28px] mt-[-2rem]">
-                    <ImMenu3/>
+                <div className="relative flex justify-end">
+                    <button  className="absolute text-cyan-500 text-[28px] mt-[-2rem]" onClick={() => setOpen(!open)}>
+                    {open ? <ImMenu4 className=""/> : <ImMenu3 className=""/>}
                     </button>
+                </div>
+
+                <div>
+                    <ul className={`${open ? "hidden" : "block duration-500 top-30"}  bg-cyan-800 absolute items-center text-center w-full p-8`}>{menu.map((menu,i)=>(
+                        <li key={i} className="">{menu?.icon}
+                        <a href="" className="text-center">
+                            {menu.title}
+                        </a>
+                    </li>
+
+                    ))}
+                        
+                    </ul>
                 </div>
             </div>
         </div>
