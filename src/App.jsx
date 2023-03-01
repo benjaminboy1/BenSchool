@@ -15,6 +15,7 @@ import Navbar from './components/Navbar';
 import Register from './components/Register';
 import Payment from './components/Payment';
 import Reporter from './components/Reporter';
+import Modalpm from './components/Modalpm';
 
 
 
@@ -118,6 +119,11 @@ useEffect(() => {
      
       
       <div className={`p-7 text-2xl font-semibold flex-1 h-screen dark:bg-gradient-to-r from-[#00111B] via-[#002233] to-[#02374B] ${theme === 'dark' ? 'text-gray-300 ' : 'text-gray-800'}`}>
+          
+
+
+
+         
           <BrowserRouter>
           <Routes>
             <Route path="/*" element={<Home />}/>
@@ -126,7 +132,7 @@ useEffect(() => {
             <Route path="Reporter" element={<Reporter/>}/>
           </Routes>
           </BrowserRouter>
-          
+         
        
        
        {/** 

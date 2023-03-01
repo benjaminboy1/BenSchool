@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState} from "react";
-import {FaCcPaypal, FaMoneyCheckAlt} from "react-icons/fa";
+import {FaCcPaypal} from "react-icons/fa";
 
-import {DiYii} from "react-icons/di";
 import mpesa from "../assets/images/mpesa.png";
 import orangemoney from "../assets/images/orangemoney.png";
 import {BsCreditCard2Back, BsFillPatchQuestionFill, BsFillCheckSquareFill} from "react-icons/bs";
@@ -11,12 +10,17 @@ import {GoVerified} from "react-icons/go";
 import prof4 from "../assets/images/prof4.jpeg";
 import Skeleton from "react-loading-skeleton"
 import 'react-loading-skeleton/dist/skeleton.css'
+import Modalpm from "./Modalpm";
 
 
 
 const Payment = ()=>{
 
     const [loading, setLoading] = useState(false);
+
+    const [openModal, setOpenModal] = useState(false);
+    const handleCloseModal = () => setOpenModal(false);
+
     const [title, setTitle] = useState("");
     const [name, setName] = useState("");
 
@@ -97,8 +101,8 @@ const Payment = ()=>{
                          
                             <div className="cards flex justify-between space-x-4">
                             <div>{loading ? ( <FaCcPaypal className="text-[50px] md:text-20 hover:text-cyan-700"/>) : (<Skeleton height={45} width={65}/>)}</div>
-                            <div>{loading ? (<img src={orangemoney} className="h-10 hover:text-cyan-700 cursor-pointer"/>) : (<Skeleton height={45} width={65}/>)}</div>
-                            <div>{loading ? (<img src={mpesa} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<img alt="" src={orangemoney} className="h-10 hover:text-cyan-700 cursor-pointer"/>) : (<Skeleton height={45} width={65}/>)}</div>
+                            <div>{loading ? (<img alt="" src={mpesa} className="h-10"/>) : (<Skeleton height={45} width={65}/>)}</div>
                             <div>{loading ? (<BsCreditCard2Back className="text-[50px] md:text-20 hover:text-cyan-700"/>) : (<Skeleton height={45} width={65}/>)}</div>
                             </div>
                            
@@ -147,7 +151,7 @@ const Payment = ()=>{
                     
                 </div>
                 <div className="text-center py-1">
-                    {loading ? (<button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded ">Pay Now!</button>) : (<Skeleton height={40} width={100} className="h-8 w-5"/>)}
+                    {loading ? (<button   className="bg-green-700 px-4 text-lg hover:bg-green-800 rounded " onClick={() => setOpenModal(true)}>Pay Now!</button>) : (<Skeleton height={40} width={100} className="h-8 w-5"/>)}
                     
                 </div>
                 <div className="">{
@@ -169,7 +173,7 @@ const Payment = ()=>{
                     
                     <div className="border-cyan-300 border-2 rounded mt-10">
                         <div className="ml-8 mt-[-2rem]">{
-                            loading ? (<img src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300 skeleton"/>) : (<Skeleton height={80} width={80} circle={true} />)
+                            loading ? (<img alt="" src={prof4} className="h-20 w-20 rounded-full border-2 border-cyan-300 skeleton"/>) : (<Skeleton height={80} width={80} circle={true} />)
                         }
                             
                         </div>
@@ -237,7 +241,7 @@ const Payment = ()=>{
 
 
           
-            
+          <Modalpm onClose={handleCloseModal} visible={openModal}/>  
         </div>
     )
 }
